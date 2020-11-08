@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Uploader</title>
+</head>
+
+<body>
+  <form action="" id="upload_form" name="upload_form">
+    <label for="image">Upload Image</label>
+    <input type="file" name="image" id="image" required>
+    <br>
+    <br>
+    <label for="description">Description</label>
+    <textarea type="text" name="description" id="description" required></textarea>
+    <br>
+    <br>
+    <button id="upload_btn">Upload</button>
+  </form>
+
+  <progress id="progres_bar" value="0" max=100></progress>
+  <h3 id="upload_status"></h3>
+  <p id="loaded_n_total"></p>
+  <br>
+  <hr>
+  <div id="gallery">
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
