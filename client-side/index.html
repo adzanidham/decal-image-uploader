@@ -4,32 +4,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Uploader</title>
+  <title>FakeGram</title>
+  <link rel="stylesheet" href="./style/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <form action="" id="upload_form" name="upload_form">
-    <label for="image">Upload Image</label>
-    <input type="file" name="image" id="image" required>
-    <br>
-    <br>
-    <label for="description">Description</label>
-    <textarea type="text" name="description" id="description" required></textarea>
-    <br>
-    <br>
-    <button id="upload_btn">Upload</button>
-  </form>
+  <div class="container">
+    <div class="header">
+      <p class="header__text">FakeGram</p>
+    </div>
+    <div class="image__gallery--grid">
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+      <div class="image"></div>
+    </div>
 
-  <progress id="progres_bar" value="0" max=100></progress>
-  <h3 id="upload_status"></h3>
-  <p id="loaded_n_total"></p>
-  <br>
-  <hr>
-  <div id="gallery">
-
+    <div class="footer">
+      <div class="footer__menu--others">
+        <div class="others__menu">
+          <div class="footer__menu--other-1">
+            <img src="./img/icon/img-collage.png" alt="">
+          </div>
+          <div class="footer__menu--other-1">
+            <img src="./img/icon/img-grid.png" alt="">
+          </div>
+          <div class="footer__menu--other-1">
+            <img src="./img/icon/img-singe.png" alt="">
+          </div>
+        </div>
+      </div>
+      <label for="image" class="footer__menu--camera">
+        <!-- <div class="footer__menu--camera"> -->
+        <input type="file" name="image" id="image">
+        <img src="./img/icon/camera-upload.png" alt="">
+        <!-- </div> -->
+      </label>
+    </div>
   </div>
-
-  <script src="script.js"></script>
 </body>
 
 </html>

@@ -4,28 +4,17 @@ function _(el) {
 
 _('upload_btn').addEventListener('click', function (e) {
   e.preventDefault()
-  // console.log('hi')
   const form_data = new FormData(_('upload_form'))
   // form_data.forEach((val, key) => console.log(key, val))
-  // postImage(form_data)
-  let ajax = new XMLHttpRequest()
-  ajax.upload.addEventListener('progress', progressHandler, false)
-  ajax.addEventListener('load', completeHandler, false)
-  ajax.addEventListener('error', errorHandler, false)
-  ajax.addEventListener('abort', abortHandler, false)
-  ajax.open('POST', 'http://localhost:3000/api/image')
-  ajax.send(form_data)
-})
 
-// function postImage(form_data) {
-//   let ajax = new XMLHttpRequest()
-//   ajax.upload.addEventListener('progress', progressHandler, false)
-//   ajax.addEventListener('load', completeHandler, false)
-//   ajax.addEventListener('error', errorHandler, false)
-//   ajax.addEventListener('abort', abortHandler, false)
-//   ajax.open('POST', 'http://localhost:3000/api/image')
-//   ajax.send(form_data)
-// }
+  const xhr = new XMLHttpRequest()
+  xhr.upload.addEventListener('progress', progressHandler, false)
+  xhr.addEventListener('load', completeHandler, false)
+  xhr.addEventListener('error', errorHandler, false)
+  xhr.addEventListener('abort', abortHandler, false)
+  xhr.open('POST', 'http://localhost:3000/api/image')
+  xhr.send(form_data)
+})
 
 function progressHandler(e) {
   _('loaded_n_total').innerHTML = `Uploaded ${e.loaded} bytes of ${e.total}`
