@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FakeGram</title>
   <link rel="stylesheet" href="./style/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&family=Pacifico&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -49,12 +50,25 @@
           </div>
         </div>
       </div>
-      <label for="image" class="footer__menu--camera">
-        <!-- <div class="footer__menu--camera"> -->
-        <input type="file" name="image" id="image">
+      <div class="footer__menu--camera">
         <img src="./img/icon/camera-upload.png" alt="">
-        <!-- </div> -->
-      </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upload Modal -->
+  <div class="modal__upload--img" id="uploadModal">
+    <div class="modal-close">X</div>
+    <div class="modal-content">
+      <div class="modal-img-select">
+
+      </div>
+      <div class="modal-img-caption">
+        <textarea name="caption" id="caption" cols="30" rows="3" placeholder="Write Caption Here..."></textarea>
+      </div>
+      <div class="btn-upload">
+        <button>Upload</button>
+      </div>
     </div>
   </div>
 

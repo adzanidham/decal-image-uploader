@@ -11,3 +11,13 @@ _('.footer__menu--single').addEventListener('click', () => {
 _('.footer__menu--grid').addEventListener('click', () => {
   _('#imgGallery').classList.replace(_('#imgGallery').className, 'image__gallery--grid')
 })
+
+// open upload modal
+_('.footer__menu--camera').addEventListener('click', () => {
+  _('#uploadModal').style.display = 'block';
+})
+
+// close upload modal
+_('.modal-close').addEventListener('click', () => {
+  _('#uploadModal').style.display = 'none';
+})

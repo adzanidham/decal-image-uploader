@@ -4,13 +4,14 @@
   box-sizing: border-box;
 }
 
-$grid_img_size: 178px;
+$grid_img_size: 193px;
 // $single_img_size: 100%;
 
 .container {
   margin: 0 auto;
   // border: 1px solid #000;
-  width: 538px;
+  max-width: 581px;
+  min-width: 581px;
   // height: 100vh;
 }
 
@@ -139,4 +140,118 @@ input[type="file"] {
       @extend .object-hover-transform
     }
   }
+}
+
+.modal__upload--img {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 125px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.8);
+
+  .modal-close {
+    border: 5px solid rgba(134, 134, 134, 0.9);
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    background: #404040;
+    position: absolute;
+    display: inline-block;
+    z-index: 99;
+    top: 104px;
+    right: 420px;
+    font-family: 'Pacifico', cursive;
+    font-size: 22px;
+    text-align: center;
+    line-height: 36px;
+    font-weight: 500;
+    color: #C4C4C4;
+    cursor: pointer;
+
+    &:hover {
+      background: #C4C4C4;
+      color: rgba(0, 0, 0, .76);
+    }
+
+    &:active {
+      line-height: 38px;
+
+    }
+  }
+
+  .modal-content {
+    background: #404040;
+    border: 5px solid rgba(134, 134, 134, 0.9);
+    border-radius: 17px;
+    margin: auto;
+    padding: 20px;
+    width: 470px;
+    height: 400px;
+
+    .modal-img-select {
+      width: 100%;
+      height: 200px;
+      background: #c4c4c4;
+      border-radius: 10px;
+    }
+
+    .modal-img-caption {
+      width: 100%;
+      margin-top: 15px;
+      // border: 1px solid white;
+
+      textarea {
+        resize: none;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        font-family: 'Comfortaa', cursive;
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+
+    .btn-upload {
+      margin: 20px auto;
+      width: 150px;
+      // border: 1px solid white;
+
+      button {
+        background: #C4C4C4;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        font-family: 'Pacifico', cursive;
+        font-size: 19px;
+        line-height: 40px;
+        color: rgba(0, 0, 0, .76);
+
+        &:hover {
+          background: #dbdbdb;
+        }
+
+        &:active {
+          position: relative;
+          top: 1px;
+        }
+
+        &:focus {
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+
 }
