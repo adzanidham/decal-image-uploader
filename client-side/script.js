@@ -21,3 +21,11 @@ _('.footer__menu--camera').addEventListener('click', () => {
 _('.modal-close').addEventListener('click', () => {
   _('#uploadModal').style.display = 'none';
 })
+
+// preview selected image before upload
+_('#foto').addEventListener('change', (e) => {
+  // _('.drop-icon').style.display = 'none'
+  _('#imgDrop').src = URL.createObjectURL(e.target.files[0])
+  _('#imgDrop').onload = () => URL.revokeObjectURL(_('#imgDrop').src)
+  // console.log(e.target.value)
+})

@@ -16,12 +16,14 @@ $grid_img_size: 193px;
 }
 
 .header {
-  width: 100%;
+  max-width: 581px;
+  min-width: 581px;
   height: 55px;
   top: 0px;
   position: sticky;
   // border: 1px solid black;
-  background: #fff;
+  background: #C4C4C4;
+  color: rgba(0, 0, 0, .76);
 }
 
 .header__text {
@@ -66,23 +68,28 @@ $grid_img_size: 193px;
     background-color: silver;
     // border: 1px solid black;
   }
+
+  // .no-image {
+  //   height: 100vh;
+  //   border: 1px solid red;
+  // }
 }
 
 .footer {
-  // position: sticky;
-  @extend .header;
+  max-width: 581px;
+  min-width: 581px;
+  position: fixed;
   height: 120px;
   background: transparent;
-  // width: 150px;
   bottom: 0px;
   // border: 1px solid black;
-  // z-index: 10;
 }
 
 .img-menu {
   width: 100%;
   background-size: cover;
   transition: .3s;
+  filter: invert(12%) sepia(17%) saturate(24%) hue-rotate(330deg) brightness(97%) contrast(84%);
 }
 
 .footer__menu--camera {
@@ -90,10 +97,10 @@ $grid_img_size: 193px;
   bottom: 13px;
   position: absolute;
   height: 80%;
-  width: 18%;
+  width: 17%;
   border-radius: 50%;
-  background: white;
-  border: 8px solid black;
+  background: #C4C4C4;
+  border: 8px solid rgba(0, 0, 0, .76);
 
   img {
     @extend .img-menu;
@@ -110,7 +117,7 @@ $grid_img_size: 193px;
   bottom: 0px;
   height: 60px;
   width: 100%;
-  background: white;
+  background: #C4C4C4;
   // border: 1px solid black;
 }
 
@@ -143,10 +150,10 @@ input[type="file"] {
 }
 
 .modal__upload--img {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
-  padding-top: 125px;
+  padding-top: 90px;
   left: 0;
   top: 0;
   width: 100%;
@@ -164,7 +171,7 @@ input[type="file"] {
     display: inline-block;
     z-index: 99;
     top: 104px;
-    right: 420px;
+    right: 427px;
     font-family: 'Pacifico', cursive;
     font-size: 22px;
     text-align: center;
@@ -191,13 +198,63 @@ input[type="file"] {
     margin: auto;
     padding: 20px;
     width: 470px;
-    height: 400px;
+    height: 500px;
 
     .modal-img-select {
       width: 100%;
-      height: 200px;
+      height: 300px;
+      padding: 5px 5px 35px 5px;
       background: #c4c4c4;
       border-radius: 10px;
+      text-align: center;
+      // position: relative;
+
+
+      .img-preview {
+        width: 100%;
+        height: 95%;
+        top: 0;
+        padding: 2px;
+        position: relative;
+        border-radius: 10px;
+        border: 2px dashed rgba(0, 0, 0, 0.8);
+
+        #imgDrop {
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          // position: relative;
+        }
+
+        // #imgDrop {
+        //   position: absolute;
+        //   width: 100%;
+        //   margin: 0 auto;
+        //   background: cover;
+        // }
+      }
+
+      p {
+        top: 0;
+        font-size: 19px;
+        font-family: 'Pacifico', cursive;
+        color: rgba(0, 0, 0, .76);
+        position: relative;
+
+        u {
+          font-size: 21px;
+          cursor: pointer;
+
+          &:hover {
+            color: #000;
+          }
+        }
+
+        input {
+          display: none;
+        }
+      }
     }
 
     .modal-img-caption {
