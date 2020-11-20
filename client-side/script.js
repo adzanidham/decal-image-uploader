@@ -36,6 +36,15 @@ _('#foto').addEventListener('change', (e) => {
 // upload img
 _('#uploadImg').addEventListener('click', (e) => {
   e.preventDefault()
-  const form_data = new FormData(_('#uploadImgForm'))
-  form_data.forEach((val, key) => console.log(key, val))
+
+  // set alert if no image selected
+  if (_('#foto').files.length === 0) {
+    _('.modal-img-select').classList.add('shake-warning')
+    setTimeout(() => _('.modal-img-select').classList.remove('shake-warning'), 500);
+    // _('.modal-img-select').classList.remove('shake-warning')
+  } else {
+    const form_data = new FormData(_('#uploadImgForm'))
+    form_data.forEach((val, key) => console.log(key, val))
+    // console.log(form_data.get(File.name))
+  }
 })
