@@ -66,25 +66,26 @@
   <div class="modal__upload--img" id="uploadModal">
     <div class="modal-close">X</div>
     <div class="modal-content">
-      <div class="modal-img-select">
-        <div class="img-preview">
-          <img src="./img/icon/select-img.png" alt="" class="drop-icon" id="imgDrop">
-          <!-- <img id="imgDrop"> -->
+      <form id="uploadImgForm">
+        <div class="modal-img-select">
+          <div class="img-preview">
+            <img id="imgDrop">
+            <p id="selectFileText">
+              <label for="foto">
+                <u>Choose a file </u>
+                <input type="file" name="foto" id="foto">
+              </label>
+              or drag it here
+            </p>
+          </div>
         </div>
-        <p>
-          <label for="foto">
-            <u>Choose a file </u>
-            <input type="file" name="foto" id="foto">
-          </label>
-          or drag it here
-        </p>
-      </div>
-      <div class="modal-img-caption">
-        <textarea name="caption" id="caption" cols="30" rows="3" placeholder="Write Caption Here..."></textarea>
-      </div>
-      <div class="btn-upload">
-        <button>Upload</button>
-      </div>
+        <div class="modal-img-caption">
+          <textarea name="caption" id="caption" cols="30" rows="3" placeholder="Write Caption Here..."></textarea>
+        </div>
+        <div class="btn-upload">
+          <button id="uploadImg">Upload</button>
+        </div>
+      </form>
     </div>
   </div>
 

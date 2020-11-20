@@ -20,6 +20,8 @@ _('.footer__menu--camera').addEventListener('click', () => {
 // close upload modal
 _('.modal-close').addEventListener('click', () => {
   _('#uploadModal').style.display = 'none';
+  _('#imgDrop').removeAttribute('src')
+  _('#selectFileText').classList.remove('hide-text')
 })
 
 // preview selected image before upload
@@ -27,5 +29,13 @@ _('#foto').addEventListener('change', (e) => {
   // _('.drop-icon').style.display = 'none'
   _('#imgDrop').src = URL.createObjectURL(e.target.files[0])
   _('#imgDrop').onload = () => URL.revokeObjectURL(_('#imgDrop').src)
+  _('#selectFileText').classList.add('hide-text')
   // console.log(e.target.value)
+})
+
+// upload img
+_('#uploadImg').addEventListener('click', (e) => {
+  e.preventDefault()
+  const form_data = new FormData(_('#uploadImgForm'))
+  form_data.forEach((val, key) => console.log(key, val))
 })
