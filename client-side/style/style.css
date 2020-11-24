@@ -7,13 +7,11 @@
 
 .container {
   margin: 0 auto;
-  max-width: 581px;
-  min-width: 581px;
+  width: 100%;
 }
 
 .header {
-  max-width: 581px;
-  min-width: 581px;
+  width: 100%;
   height: 55px;
   top: 0px;
   position: -webkit-sticky;
@@ -69,11 +67,9 @@
 }
 
 .footer {
-  max-width: 581px;
-  min-width: 581px;
+  width: 100%;
   position: fixed;
-  height: 120px;
-  background: transparent;
+  height: 60px;
   bottom: 0px;
 }
 
@@ -88,23 +84,30 @@
           filter: invert(12%) sepia(17%) saturate(24%) hue-rotate(330deg) brightness(97%) contrast(84%);
 }
 
-.footer__menu--camera {
-  right: 30px;
-  bottom: 13px;
-  position: absolute;
-  height: 80%;
-  width: 17%;
-  border-radius: 50%;
-  background: #C4C4C4;
-  border: 8px solid rgba(0, 0, 0, 0.76);
-}
-
-.footer__menu--others {
+.footer__menus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   position: absolute;
   bottom: 0px;
+  padding-right: 20%;
   height: 60px;
   width: 100%;
   background: #C4C4C4;
+}
+
+.footer__menu--camera {
+  right: 5%;
+  bottom: 16px;
+  position: absolute;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background: #C4C4C4;
+  border: 8px solid rgba(0, 0, 0, 0.76);
 }
 
 .others__menu {
@@ -129,7 +132,7 @@ input[type="file"] {
   padding: 2px 6px;
 }
 
-.modal__upload--img {
+.modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -142,7 +145,7 @@ input[type="file"] {
   background: rgba(0, 0, 0, 0.8);
 }
 
-.modal__upload--img .modal-close {
+.modal .modal__close {
   border: 5px solid rgba(134, 134, 134, 0.9);
   border-radius: 50%;
   width: 46px;
@@ -151,8 +154,8 @@ input[type="file"] {
   position: absolute;
   display: inline-block;
   z-index: 99;
-  top: 70px;
-  right: 427px;
+  top: -25px;
+  right: -25px;
   font-family: 'Pacifico', cursive;
   font-size: 22px;
   text-align: center;
@@ -162,16 +165,16 @@ input[type="file"] {
   cursor: pointer;
 }
 
-.modal__upload--img .modal-close:hover {
+.modal .modal__close:hover {
   background: #C4C4C4;
   color: rgba(0, 0, 0, 0.76);
 }
 
-.modal__upload--img .modal-close:active {
+.modal .modal__close:active {
   line-height: 38px;
 }
 
-.modal__upload--img .modal-content {
+.modal .modal__content {
   background: #404040;
   border: 5px solid rgba(134, 134, 134, 0.9);
   border-radius: 17px;
@@ -179,28 +182,19 @@ input[type="file"] {
   padding: 20px;
   width: 470px;
   height: 500px;
+  position: relative;
 }
 
-.modal__upload--img .modal-content .modal-img-select {
+.modal .modal__content .modal__upload__select {
   width: 100%;
   height: 300px;
-  padding: 5px;
   background: #c4c4c4;
   border-radius: 10px;
   text-align: center;
-}
-
-.modal__upload--img .modal-content .modal-img-select .img-preview {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  padding: 2px;
   position: relative;
-  border-radius: 10px;
-  border: 3px dashed rgba(134, 134, 134, 0.9);
 }
 
-.modal__upload--img .modal-content .modal-img-select .img-preview #imgDrop {
+.modal .modal__content .modal__upload__select #imgDrop {
   border-radius: 10px;
   width: 100%;
   height: 100%;
@@ -208,36 +202,47 @@ input[type="file"] {
      object-fit: cover;
 }
 
-.modal__upload--img .modal-content .modal-img-select p {
-  top: -160px;
+.modal .modal__content .modal__upload__select .modal__upload__drop {
+  width: 97%;
+  height: 97%;
+  top: 5px;
+  left: 6px;
+  position: absolute;
+  border-radius: 10px;
+  border: 3px dashed rgba(134, 134, 134, 0.9);
+}
+
+.modal .modal__content .modal__upload__select p {
+  top: 125px;
   font-size: 19px;
   font-family: 'Pacifico', cursive;
   color: rgba(0, 0, 0, 0.76);
   position: relative;
+  z-index: 1;
 }
 
-.modal__upload--img .modal-content .modal-img-select p u {
+.modal .modal__content .modal__upload__select p u {
   font-size: 21px;
   cursor: pointer;
 }
 
-.modal__upload--img .modal-content .modal-img-select p u:hover {
+.modal .modal__content .modal__upload__select p u:hover {
   color: #000;
 }
 
-.modal__upload--img .modal-content .modal-img-select p input {
+.modal .modal__content .modal__upload__select p input {
   display: none;
 }
 
-.modal__upload--img .modal-content .modal-img-select .hide-text {
+.modal .modal__content .modal__upload__select .hide-text {
   color: transparent;
 }
 
-.modal__upload--img .modal-content .modal-img-select .hide-text:hover {
+.modal .modal__content .modal__upload__select .hide-text:hover {
   color: rgba(0, 0, 0, 0.76);
 }
 
-.modal__upload--img .modal-content .shake-warning {
+.modal .modal__content .shake-warning {
   -webkit-animation: shake .5s;
           animation: shake .5s;
 }
@@ -336,12 +341,12 @@ input[type="file"] {
   }
 }
 
-.modal__upload--img .modal-content .modal-img-caption {
+.modal .modal__content .modal__upload__caption {
   width: 100%;
   margin-top: 15px;
 }
 
-.modal__upload--img .modal-content .modal-img-caption textarea {
+.modal .modal__content .modal__upload__caption textarea {
   resize: none;
   width: 100%;
   border-radius: 10px;
@@ -351,17 +356,17 @@ input[type="file"] {
   font-family: 'Comfortaa', cursive;
 }
 
-.modal__upload--img .modal-content .modal-img-caption textarea:focus {
+.modal .modal__content .modal__upload__caption textarea:focus {
   border: none;
   outline: none;
 }
 
-.modal__upload--img .modal-content .btn-upload {
-  margin: 20px auto;
+.modal .modal__content .modal__footer {
+  margin: 10px auto;
   width: 150px;
 }
 
-.modal__upload--img .modal-content .btn-upload button {
+.modal .modal__content .modal__footer button {
   background: #C4C4C4;
   border-radius: 10px;
   border: none;
@@ -373,16 +378,16 @@ input[type="file"] {
   color: rgba(0, 0, 0, 0.76);
 }
 
-.modal__upload--img .modal-content .btn-upload button:hover {
+.modal .modal__content .modal__footer button:hover {
   background: #dbdbdb;
 }
 
-.modal__upload--img .modal-content .btn-upload button:active {
+.modal .modal__content .modal__footer button:active {
   position: relative;
   top: 1px;
 }
 
-.modal__upload--img .modal-content .btn-upload button:focus {
+.modal .modal__content .modal__footer button:focus {
   border: none;
   outline: none;
 }

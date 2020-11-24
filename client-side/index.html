@@ -43,33 +43,30 @@
     </div>
 
     <div class="footer">
-      <div class="footer__menu--others">
-        <div class="others__menu">
-          <div class="footer__menu--collage">
-            <img src="./img/icon/img-collage.png" alt="">
-          </div>
-          <div class="footer__menu--grid">
-            <img src="./img/icon/img-grid.png" alt="">
-          </div>
-          <div class="footer__menu--single">
-            <img src="./img/icon/img-singe.png" alt="">
-          </div>
+      <div class="footer__menus">
+        <div class="footer__menu--collage">
+          <img src="./img/icon/img-collage.png" alt="">
         </div>
-      </div>
-      <div class="footer__menu--camera">
-        <img src="./img/icon/camera-upload.png" alt="">
+        <div class="footer__menu--grid">
+          <img src="./img/icon/img-grid.png" alt="">
+        </div>
+        <div class="footer__menu--single">
+          <img src="./img/icon/img-singe.png" alt="">
+        </div>
+        <div class="footer__menu--camera">
+          <img src="./img/icon/camera-upload.png" alt="">
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Upload Modal -->
-  <div class="modal__upload--img" id="uploadModal">
-    <div class="modal-close">X</div>
-    <div class="modal-content">
+  <div class="modal modal__upload" id="uploadModal">
+    <div class="modal__content">
+      <div class="modal__close">X</div>
       <form id="uploadImgForm">
-        <div class="modal-img-select">
-          <div class="img-preview">
-            <img id="imgDrop">
+        <div class="modal__upload__select">
+          <div class="modal__upload__drop">
             <p id="selectFileText">
               <label for="foto">
                 <u>Choose a file </u>
@@ -78,11 +75,12 @@
               or drag it here
             </p>
           </div>
+          <img id="imgDrop">
         </div>
-        <div class="modal-img-caption">
+        <div class="modal__upload__caption">
           <textarea name="caption" id="caption" cols="30" rows="3" placeholder="Write Caption Here..."></textarea>
         </div>
-        <div class="btn-upload">
+        <div class="modal__footer">
           <button id="uploadImg">Upload</button>
         </div>
       </form>

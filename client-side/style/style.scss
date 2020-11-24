@@ -10,14 +10,16 @@ $grid_img_size: 193px;
 .container {
   margin: 0 auto;
   // border: 1px solid #000;
-  max-width: 581px;
-  min-width: 581px;
+  // max-width: 581px;
+  // min-width: 581px;
+  width: 100%;
   // height: 100vh;
 }
 
 .header {
-  max-width: 581px;
-  min-width: 581px;
+  // max-width: 581px;
+  // min-width: 581px;
+  width: 100%;
   height: 55px;
   top: 0px;
   position: sticky;
@@ -76,11 +78,12 @@ $grid_img_size: 193px;
 }
 
 .footer {
-  max-width: 581px;
-  min-width: 581px;
+  // max-width: 581px;
+  // min-width: 581px;
+  width: 100%;
   position: fixed;
-  height: 120px;
-  background: transparent;
+  height: 60px;
+  // background: transparent;
   bottom: 0px;
   // border: 1px solid black;
 }
@@ -92,12 +95,24 @@ $grid_img_size: 193px;
   filter: invert(12%) sepia(17%) saturate(24%) hue-rotate(330deg) brightness(97%) contrast(84%);
 }
 
-.footer__menu--camera {
-  right: 30px;
-  bottom: 13px;
+.footer__menus {
+  display: flex;
+  justify-content: space-evenly;
   position: absolute;
-  height: 80%;
-  width: 17%;
+  bottom: 0px;
+  padding-right: 20%;
+  height: 60px;
+  width: 100%;
+  background: #C4C4C4;
+  // border: 1px solid black;
+}
+
+.footer__menu--camera {
+  right: 5%;
+  bottom: 16px;
+  position: absolute;
+  height: 90px;
+  width: 90px;
   border-radius: 50%;
   background: #C4C4C4;
   border: 8px solid rgba(0, 0, 0, .76);
@@ -109,16 +124,6 @@ $grid_img_size: 193px;
       @extend .object-hover-transform
     }
   }
-}
-
-.footer__menu--others {
-  // @extend .header;
-  position: absolute;
-  bottom: 0px;
-  height: 60px;
-  width: 100%;
-  background: #C4C4C4;
-  // border: 1px solid black;
 }
 
 .others__menu {
@@ -149,7 +154,7 @@ input[type="file"] {
   }
 }
 
-.modal__upload--img {
+.modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -161,7 +166,7 @@ input[type="file"] {
   overflow: auto;
   background: rgba(0, 0, 0, 0.8);
 
-  .modal-close {
+  .modal__close {
     border: 5px solid rgba(134, 134, 134, 0.9);
     border-radius: 50%;
     width: 46px;
@@ -170,8 +175,8 @@ input[type="file"] {
     position: absolute;
     display: inline-block;
     z-index: 99;
-    top: 70px;
-    right: 427px;
+    top: -25px;
+    right: -25px;
     font-family: 'Pacifico', cursive;
     font-size: 22px;
     text-align: center;
@@ -191,7 +196,7 @@ input[type="file"] {
     }
   }
 
-  .modal-content {
+  .modal__content {
     background: #404040;
     border: 5px solid rgba(134, 134, 134, 0.9);
     border-radius: 17px;
@@ -199,40 +204,42 @@ input[type="file"] {
     padding: 20px;
     width: 470px;
     height: 500px;
+    position: relative;
 
-    .modal-img-select {
+    .modal__upload__select {
       width: 100%;
       height: 300px;
-      padding: 5px;
+      // padding: 5px;
       background: #c4c4c4;
       border-radius: 10px;
       text-align: center;
-      // position: relative;
+      position: relative;
 
-      .img-preview {
+      #imgDrop {
+        border-radius: 10px;
         width: 100%;
         height: 100%;
-        top: 0;
-        padding: 2px;
-        position: relative;
+        object-fit: cover;
+      }
+
+      .modal__upload__drop {
+        width: 97%;
+        height: 97%;
+        top: 5px;
+        left: 6px;
+        // padding: 2px;
+        position: absolute;
         border-radius: 10px;
         border: 3px dashed rgba(134, 134, 134, 0.9);
-
-        #imgDrop {
-          border-radius: 10px;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
       }
 
       p {
-        top: -160px;
+        top: 125px;
         font-size: 19px;
         font-family: 'Pacifico', cursive;
         color: rgba(0, 0, 0, .76);
         position: relative;
-        // line-height: 300px;
+        z-index: 1;
 
         u {
           font-size: 21px;
@@ -307,7 +314,7 @@ input[type="file"] {
       }
     }
 
-    .modal-img-caption {
+    .modal__upload__caption {
       width: 100%;
       margin-top: 15px;
       // border: 1px solid white;
@@ -328,8 +335,8 @@ input[type="file"] {
       }
     }
 
-    .btn-upload {
-      margin: 20px auto;
+    .modal__footer {
+      margin: 10px auto;
       width: 150px;
       // border: 1px solid white;
 

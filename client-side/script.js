@@ -18,7 +18,7 @@ _('.footer__menu--camera').addEventListener('click', () => {
 })
 
 // close upload modal
-_('.modal-close').addEventListener('click', () => {
+_('.modal__close').addEventListener('click', () => {
   _('#uploadModal').style.display = 'none';
   _('#imgDrop').removeAttribute('src')
   _('#selectFileText').classList.remove('hide-text')
@@ -39,8 +39,8 @@ _('#uploadImg').addEventListener('click', (e) => {
 
   // set alert if no image selected
   if (_('#foto').files.length === 0) {
-    _('.modal-img-select').classList.add('shake-warning')
-    setTimeout(() => _('.modal-img-select').classList.remove('shake-warning'), 500);
+    _('.modal__upload__select').classList.add('shake-warning')
+    setTimeout(() => _('.modal__upload__select').classList.remove('shake-warning'), 500);
     // _('.modal-img-select').classList.remove('shake-warning')
   } else {
     const form_data = new FormData(_('#uploadImgForm'))
